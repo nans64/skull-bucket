@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Participations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom du défi</th>
+      <th>Createur</th>
+      <th>Participant</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <% @count_users = 0 %>
+        <% @participations.each do |participation| %>
+      <tr>
+      </tr>
+    <% if participation.defi.id == 1 %>
+        <td><%= participation.defi.name %></td>
+        <td><%= participation.defi.user.email %></td>
+        <td><%= participation.user.email %></td>
+        <td><%= link_to 'Show', participation %></td>
+        <td><%= link_to 'Edit', edit_participation_path(participation) %></td>
+        <td><%= link_to 'Destroy', participation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% @count_users =  @count_users + 1 %>
+    <% end %>
+
+
+    <% end %>
+    <p><%= @count_users %> personnes participent actuellement à ce défi</p>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+  <tr>
+    <th>Defi</th>
+    <th>User</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+
+
+
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Participation', new_participation_path %>

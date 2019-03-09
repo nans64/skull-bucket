@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @defi.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @defi.user %>
+</p>
+
+<%= link_to 'Edit', edit_defi_path(@defi) %> |
+<%= link_to 'Back', defis_path %>
